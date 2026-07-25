@@ -1,0 +1,447 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f7f8fb;
+    color:#111827;
+}
+
+.container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px 20px;
+}
+
+.home{
+    width:700px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-card{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo{
+    width:64px;
+    height:64px;
+    margin:auto;
+    border-radius:22px;
+    background:#34d27b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 12px 25px rgba(52,210,123,.30);
+    transition:.3s;
+}
+
+.logo:hover{
+    transform:translateY(-3px) scale(1.05);
+}
+
+.logo i{
+    color:#fff;
+    font-size:30px;
+}
+
+.logo-card h1{
+    margin-top:18px;
+    font-size:44px;
+    font-weight:700;
+    color:#111827;
+}
+
+.logo-card p{
+    margin-top:8px;
+    font-size:16px;
+    color:#6b7280;
+}
+
+/* =========================
+   NAME CARD
+========================= */
+
+.name-card{
+    width:100%;
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+}
+
+.top-border{
+    height:5px;
+    background:linear-gradient(90deg,#34d27b,#f6b93b);
+}
+
+.card-body{
+    padding:24px;
+}
+
+.card-body h2{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.card-body span{
+    display:block;
+    color:#6b7280;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.name-card input{
+    width:100%;
+    height:52px;
+    border:1px solid #d9dee8;
+    border-radius:18px;
+    padding:0 20px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.name-card input:focus{
+    border:2px solid #34d27b;
+    box-shadow:0 0 0 4px rgba(52,210,123,.15);
+}
+
+/* ========================================
+   OPTION CARDS
+======================================== */
+
+.cards{
+    display:flex;
+    gap:24px;
+    margin-top:25px;
+}
+
+.card{
+    width:calc(50% - 12px);
+    background:#ffffff;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+/* ========================================
+   ICONS
+======================================== */
+
+.icon{
+    width:46px;
+    height:46px;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.green{
+    background:#e8fff2;
+    color:#34d27b;
+}
+
+.blue{
+    background:#edf5ff;
+    color:#4b82f4;
+}
+
+/* ========================================
+   CARD TEXT
+======================================== */
+
+.card h3{
+    font-size:19px;
+    font-weight:700;
+    color:#111827;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:14px;
+    color:#6b7280;
+    line-height:1.5;
+    margin-bottom:18px;
+    min-height:45px;
+}
+
+/* ========================================
+   ROOM INPUT
+======================================== */
+
+.cart-input{
+    width:100%;
+    height:50px;
+    border:1px solid #d9dee8;
+    border-radius:18px;
+    padding:0 18px;
+    font-size:16px;
+    color:#555;
+    outline:none;
+    transition:.3s;
+    margin-bottom:18px;
+}
+
+.cart-input::placeholder{
+    color:#9ca3af;
+}
+
+.cart-input:focus{
+    border:2px solid #34d27b;
+    box-shadow:0 0 0 4px rgba(52,210,123,.15);
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.create-btn,
+.join-btn{
+    width:100%;
+    height:48px;
+    border:none;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.create-btn{
+    background:#34D27B;
+    color:#ffffff;
+}
+
+.create-btn:hover{
+    background:#2bb86b;
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(52,210,123,.35);
+}
+
+.join-btn{
+    background:#f3f4f6;
+    color:#111827;
+}
+
+.join-btn:hover{
+    background:#e5e7eb;
+    transform:translateY(-2px);
+}
+
+.create-btn i{
+    margin-right:8px;
+}
+
+.join-btn i{
+    margin-left:8px;
+}
+
+/* ==========================================
+   RECENT CART
+========================================== */
+
+.recent{
+    text-align:center;
+    margin-top:22px;
+    margin-bottom:30px;
+}
+
+.recent p{
+    font-size:15px;
+    color:#6b7280;
+    margin-bottom:15px;
+}
+
+.recent button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:10px 22px;
+
+    background:#ffffff;
+    border:1px solid #d9dee8;
+
+    border-radius:50px;
+
+    color:#111827;
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+}
+
+.recent button:hover{
+    background:#F7B547;
+    color:#ffffff;
+    border-color:#F7B547;
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(247,181,71,.35);
+}
+
+.recent button i{
+    font-size:15px;
+}
+
+/* ==========================================
+   SMOOTH ANIMATIONS
+========================================== */
+
+button{
+    transition:all .3s ease;
+}
+
+input{
+    transition:all .3s ease;
+}
+
+.card,
+.logo,
+.name-card{
+    transition:all .3s ease;
+}
+
+/* ==========================================
+   PLACEHOLDER
+========================================== */
+
+::placeholder{
+    color:#9ca3af;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .home{
+        width:95%;
+    }
+
+    .cards{
+        flex-direction:column;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .logo-card h1{
+        font-size:40px;
+    }
+
+    .logo-card p{
+        font-size:16px;
+    }
+
+    .logo{
+        width:66px;
+        height:66px;
+    }
+
+    .logo i{
+        font-size:30px;
+    }
+
+    .card-body{
+        padding:22px;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .container{
+        padding:25px 15px;
+    }
+
+    .logo-card{
+        margin-top:15px;
+        margin-bottom:25px;
+    }
+
+    .logo-card h1{
+        font-size:34px;
+    }
+
+    .logo-card p{
+        font-size:15px;
+    }
+
+    .name-card{
+        border-radius:20px;
+    }
+
+    .card{
+        border-radius:20px;
+    }
+
+    .create-btn,
+    .join-btn{
+        height:50px;
+        font-size:16px;
+    }
+
+    .recent button{
+        width:100%;
+    }
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eef3fa;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#94a3b8;
+}
+
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
+::selection{
+    background:#d2eddd;
+    color:#ffffff;
+}

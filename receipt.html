@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CartShare Receipt</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/receipt.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="top-bar">
+
+            <button id="backBtn" class="back-btn">
+                <i class="bi bi-arrow-left"></i>
+                Back to Cart
+            </button>
+
+            <button id="printBtn" class="print-btn">
+                <i class="bi bi-printer"></i>
+                Print Receipt
+            </button>
+
+        </header>
+
+        <div class="receipt-card">
+
+            <div class="receipt-header">
+
+                <h1>CARTSHARE</h1>
+
+                <h2 id="cartName">Shopping Cart</h2>
+
+                <p id="receiptDate"></p>
+
+                <span class="receipt-ref">
+                    Ref:
+                    <strong id="receiptRef"></strong>
+                </span>
+
+            </div>
+
+            <hr class="dashed">
+
+            <!-- Receipt Table -->
+
+            <div class="receipt-table">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Item</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                            <th>Added By</th>
+                            <th>Total</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="receiptItems">
+
+                        <!-- JavaScript inserts rows -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <hr class="dashed">
+
+            <div class="summary">
+
+                <div class="summary-row">
+
+                    <span>Total Items:</span>
+
+                    <span id="totalItems">0</span>
+
+                </div>
+
+                <div class="summary-row total">
+
+                    <span>Grand Total:</span>
+
+                    <span id="grandTotal">$0.00</span>
+
+                </div>
+
+            </div>
+
+            <div class="receipt-footer">
+
+                Thank You for Shopping with CartShare!
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/receipt.js"></script>
+
+</body>
+
+</html>

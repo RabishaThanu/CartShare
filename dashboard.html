@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CartShare Dashboard</title>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+   <header class="header">
+
+    <div class="logo-section">
+
+        <div class="logo">
+
+            <i class="bi bi-bag"></i>
+
+        </div>
+
+        <div class="title">
+
+            <h2>CartShare</h2>
+
+            <div class="code">
+
+                <span>Code:</span>
+
+                <span id="roomCode"></span>
+                <button id="copyBtn">
+
+                    <i class="bi bi-copy"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="header-buttons">
+
+    <button
+        class="checkout-btn"
+        id="checkoutBtn">
+
+        <i class="bi bi-receipt"></i>
+
+        Checkout
+
+    </button>
+
+    <div class="profile-menu">
+
+    <button
+        class="profile-btn"
+        id="profileBtn">
+
+        <span id="profileInitial">R</span>
+
+    </button>
+
+    <div
+        class="profile-dropdown"
+        id="profileDropdown">
+
+        <div class="profile-user">
+
+            <div class="profile-avatar">
+
+                <span id="dropdownInitial">R</span>
+
+            </div>
+
+            <div>
+
+                <h4 id="profileName">Guest</h4>
+
+                <small>Ready to Shop</small>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <button
+            id="logoutBtn"
+            class="dropdown-item">
+
+            <i class="bi bi-box-arrow-right"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</div>
+
+    </div>
+
+   </header>
+
+    <!-- Dashboard -->
+
+    <main class="dashboard">
+
+        <!-- LEFT PANEL -->
+
+        <section class="left-panel">
+
+    <!-- =========================
+         Shipping Card
+    ========================== -->
+
+    <div class="shipping-card">
+
+        <div class="shipping-top">
+
+            <div class="shipping-text">
+
+               <i class="bi bi-truck"></i>
+
+                <span id="shippingText">
+                    Add ₹75.00 more for free shipping
+                </span>
+
+            </div>
+
+               <strong id="shippingAmount">
+                 ₹75.00
+               </strong>
+
+            </div>
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         Add Item
+    ========================== -->
+
+    <div class="add-item-card">
+
+      <div class="add-item">
+
+        <input type="text" id="itemName" placeholder="What do we need?">
+
+        <input type="number" id="itemPrice" placeholder="₹ 0.00">
+
+        <input type="number" id="itemQty" value="1">
+
+        <button id="addBtn">
+            <i class="bi bi-plus-lg"></i>
+        </button>
+
+      </div>
+
+    </div>
+    <!-- =========================
+         Cart Items
+    ========================== -->
+
+    <div class="cart-card">
+
+        <div class="cart-title">
+
+            <h2>Cart Items</h2>
+
+            <span id="cartBadge">0</span>
+
+        </div>
+
+        <div id="cartItems">
+
+         <div class="empty-cart">
+
+          <i class="bi bi-bag"></i>
+
+          <h3>The cart is empty</h3>
+
+          <p>Be the first to add something.</p>
+
+         </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- RIGHT PANEL -->
+
+        <aside class="right-panel">
+
+    <!-- ==========================
+         LIVE SUMMARY
+    =========================== -->
+
+    <div class="summary-card">
+
+        <p class="summary-heading">
+            LIVE SUMMARY
+        </p>
+
+    <div class="summary-top">
+
+     <div>
+        <h2>Total Cost</h2>
+
+        <small>
+            Items: <span id="itemCount">0</span>
+        </small>
+     </div>
+
+    <div class="summary-right">
+
+        <div class="total-price" id="totalCost">₹0.00</div>
+
+        <small>
+            Unique:
+            <span id="uniqueCount">0</span>
+        </small>
+
+    </div>
+
+    </div>
+
+        <div class="summary-line"></div>
+
+        <div class="summary-bottom">
+
+            <div>
+
+                <i class="bi bi-people"></i>
+
+                <span>WHO'S PAYING WHAT</span>
+
+            </div>
+
+             <div id="payerList">
+
+                <p>
+                  Start adding items to see the split.
+                </p>
+
+             </div>
+
+         </div>
+
+    </div>
+
+    <!-- ==========================
+         LIVE ACTIVITY
+    =========================== -->
+
+    <div class="activity-card">
+
+        <div class="activity-header">
+
+            <h2>
+
+                Live Activity
+
+            </h2>
+
+        </div>
+
+        <div class="activity-body">
+
+          <div id="activityList">
+
+             <p class="empty-activity">
+
+               No activity yet.
+               Start adding items!
+
+             </p>
+
+             </div>
+
+         </div>
+
+    </div>
+
+</aside>
+
+    </main>
+
+    <!-- Toast Notification -->
+<div id="toast" class="toast">
+    <i id="toastIcon" class="bi bi-check-circle-fill"></i>
+    <span id="toastMessage"></span>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div id="deleteModal" class="modal-overlay">
+
+    <div class="modal-box">
+
+        <h3>🗑 Delete Item</h3>
+
+        <p id="deleteText">
+            Are you sure you want to delete this item?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button id="cancelDelete" class="cancel-btn">
+                Cancel
+            </button>
+
+            <button id="confirmDelete" class="modal-delete-btn">
+               🗑️ Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+     EDIT ITEM MODAL
+=========================== -->
+<div id="editModal" class="modal-overlay">
+
+    <div class="modal-box">
+
+        <h3>✏️ Edit Item</h3>
+
+        <input
+            type="text"
+            id="editItemName"
+            class="modal-input"
+            placeholder="Item Name">
+
+        <input
+            type="number"
+            id="editItemPrice"
+            class="modal-input"
+            placeholder="Price">
+
+        <input
+            type="number"
+            id="editItemQty"
+            class="modal-input"
+            placeholder="Quantity">
+
+        <input
+            type="text"
+            id="editItemUser"
+            class="modal-input"
+            placeholder="Added By">
+
+        <div class="modal-buttons">
+
+            <button
+                id="cancelEdit"
+                class="cancel-btn">
+                Cancel
+            </button>
+
+            <button
+                id="saveEdit"
+                class="save-btn">
+                💾 Save
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+
+</html>
